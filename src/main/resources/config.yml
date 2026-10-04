@@ -1,0 +1,98 @@
+# ================================
+#  TKM - Taş Kağıt Makas Config
+#  CoinFlip tarzı oyun sistemi
+# ================================
+
+# Oyun ön eki
+prefix: "&8[&eTKM&8] "
+
+# Bahis limitleri
+min-bet: 1000.0
+max-bet: 10000000.0
+
+# GUI'de gözükecek hazır miktarlar (7 taneye kadar önerilir)
+amounts:
+  - 1000
+  - 5000
+  - 10000
+  - 50000
+  - 100000
+  - 500000
+  - 1000000
+
+# Taş/kağıt/makas seçim süresi (saniye) - sen 30 istedin
+choice-time: 30
+
+# Süre bitince seçim yapmayan KAYBEDER (true).
+# false yaparsan süre bitince oyun iptal olup paralar iade edilir.
+timeout-lose: true
+
+# Beraberlik durumu:
+# REMATCH = tekrar seçim istenir (önerilen)
+# REFUND = paralar iade edilir
+draw-action: REMATCH
+
+# Kazananın aldığı paradan kesilecek vergi (%) - 10 = %10 kesinti
+# Örn: 10.000'lik oyunda pot 20.000, kazanan 18.000 alır (2.000 vergi)
+tax-percent: 10.0
+
+# Oyun kurulunca / katılınca tüm sunucuya duyuru atılsın mı?
+broadcast-create: true
+broadcast-join: false
+broadcast-win: true
+
+# Chat'ten yazarak seçim yapılabilsin mi? (taş / kağıt / makas yazınca)
+# true = hem tıklanabilir mesaj hem chat yazısı çalışır
+allow-chat-choice: true
+
+# GUI başlıkları (renk kodları & ile)
+gui:
+  main-title: "&8» &eTaş Kağıt Makas"
+  games-title: "&8» &eAktif Oyunlar"
+
+# Mesajlar - hepsini buradan düzenleyebilirsin
+messages:
+  no-permission: "&cBunun için yetkin yok!"
+  only-player: "&cBu komutu sadece oyunda kullanabilirsin!"
+  no-vault: "&cVault / ekonomi eklentisi bulunamadı!"
+  not-enough-money: "&cYetersiz bakiye! Gerekli: &e{amount} &cBakiyen: &e{balance}"
+  invalid-amount: "&cGeçersiz miktar! Örnek: &e/tkm kur 10000"
+  amount-range: "&cMiktar &e{min} &cile &e{max} &carasında olmalı!"
+  already-in-game: "&cZaten aktif bir oyunun var! Önce &e/tkm iptal &cyaz."
+  no-game: "&cAktif bir oyunun yok!"
+  game-created: "&a{amount} &2miktarıyla oyun kurdun! Rakip bekleniyor..."
+  game-create-broadcast: "&e{player} &7adlı oyuncu &a{amount} &7miktarıyla TKM oyunu kurdu! Katılmak için: &e/tkm katıl {player}"
+  game-cancelled: "&cOyunun iptal edildi, &e{amount} &ciade edildi."
+  game-not-found: "&c{player} &cadlı oyuncunun aktif oyunu yok!"
+  cant-join-own: "&cKendi oyununa katılamazsın!"
+  game-full: "&cBu oyun zaten başladı!"
+  join-success: "&aOyuna katıldın! Bahis: &e{amount}"
+  join-opponent: "&e{player} &aoyununa katıldı! Şimdi seçiminizi yapın."
+  choice-ask: "&eSeçimini yap &7({time} &7saniyen var):"
+  choice-made: "&aSeçimini yaptın: &e{choice} &7Rakip bekleniyor..."
+  opponent-chose: "&7Rakip seçimini yaptı!"
+  already-chose: "&cZaten seçim yaptın, bekleniyor..."
+  invalid-choice: "&cGeçersiz seçim! taş / kağıt / makas yaz veya yukarıdaki butonlara tıkla."
+  timeout-lose: "&cSüre doldu ve seçim yapmadığın için kaybettin!"
+  timeout-win: "&aRakip sürede seçim yapmadı, kazandın! &e(+{amount})"
+  timeout-refund: "&cSüre doldu, oyun iptal edildi ve paralar iade edildi."
+  win: "&a&lKAZANDIN! &7Seçimler: &eSen({you}) &7vs &cRakip({opponent}) &7Kazanç: &a+{amount}"
+  lose: "&c&lKAYBETTİN! &7Seçimler: &eSen({you}) &7vs &aRakip({opponent})"
+  draw: "&e&lBERABERE! &7İkiniz de &e{choice} &7seçtiniz. Tekrar seçin!"
+  draw-refund: "&eBerabere! Paralar iade edildi."
+  win-broadcast: "&e{winner} &7adlı oyuncu TKM'de &e{loser} &7adlı oyuncuyu yendi ve &a{amount} &7kazandı! (&7{choice-winner} vs {choice-loser}&7)"
+  quit-refund: "&aRakip oyundan ayrıldığı için &e{amount} &aiade edildi, hükmen kazandın sayılmaz."
+  quit-win: "&aRakip oyundan ayrıldı! &e{amount} &akazandın."
+  custom-amount-ask: "&eKurmak istediğin miktarı chat'e yaz (örn: 15000). İptal için &c'iptal' &eyaz."
+  custom-amount-cancelled: "&cÖzel miktar girişi iptal edildi."
+  help:
+    - "&8&m--------------------------------"
+    - "&e&lTKM - Taş Kağıt Makas"
+    - "&7/tkm &8- &fOyun menüsünü aç"
+    - "&7/tkm kur <miktar> &8- &fOyun kur"
+    - "&7/tkm katıl <oyuncu> &8- &fOyuna katıl"
+    - "&7/tkm iptal &8- &fOyununu iptal et"
+    - "&7/tkm liste &8- &fAktif oyunları gör"
+    - "&8&m--------------------------------"
+  reloaded: "&aConfig yeniden yüklendi!"
+  type-amount-in-chat: "&7Miktar bekleniyor, chat'e yaz..."
